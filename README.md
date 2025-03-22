@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Skip Hire App
+This is a web app that lets you choose the perfect skip for your needs. Whether you're clearing out junk or doing a home renovation, you can easily select a skip size, see the price, and get started with your booking.
 
-## Getting Started
+How it Works
+Step-by-Step Process
+The app takes you through several steps to book your skip. These include entering your postcode, choosing a waste type, selecting the right skip, and checking for permits. You'll also choose your hire period and make a payment.
 
-First, run the development server:
+Choosing the Skip Size
+The main part of the app is selecting the right skip. Once you've selected a skip size, you'll see its price and hire period. You can choose a skip based on size (4, 6, 8, 10, or 12 yards).
 
-```bash
+Fetching Skip Data
+The app fetches all skip details from a server. This includes images, sizes, hire periods, and pricing. If there's an issue with loading the data, an error message will show up, or a loading spinner will be displayed until the data is ready.
+
+Key Features
+Multi-Step Booking
+Users follow steps like choosing the postcode, selecting waste types, picking a skip, checking for permits, and making payments.
+
+Responsive UI
+The layout adapts to different screen sizes, so it works well on mobile, tablet, and desktop devices.
+
+Error Handling
+If there's a problem fetching the data, you'll see a friendly error message.
+
+Skeleton Loader
+While waiting for data to load, a skeleton loader keeps things looking smooth.
+
+- How to Run It Locally
+Clone the Repo
+First, download the code by cloning the repository:
+
+git clone https://github.com/your-username/skip-hire-app.git
+cd skip-hire-app
+
+
+- Install Dependencies
+Install the required packages:
+
+npm install
+Run the App
+
+
+- Start the app locally:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open in Browser
+Open your browser and go to http://localhost:3000 to see the app in action.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Built With
+Next.js: A React framework for building fast, scalable apps.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+React: A JavaScript library for creating interactive UIs.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tailwind CSS: A utility-first CSS framework for designing beautiful UIs.
 
-## Learn More
+lucide-react: A collection of icons for React.
 
-To learn more about Next.js, take a look at the following resources:
+React Query: A library to handle data fetching in React apps.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
