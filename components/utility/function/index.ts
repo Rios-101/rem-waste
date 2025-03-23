@@ -11,6 +11,13 @@ export const APICall = async (
 ) => {
 
   try {
+
+    // Check for internet connection
+    if (!navigator.onLine) {
+      toast("No internet connection. Please check your network.", { type: "error" });
+      throw new Error("No internet connection");
+    }
+
     // showLoadingBar && loadingBarRef.current?.continuousStart();
     const response =
       args &&

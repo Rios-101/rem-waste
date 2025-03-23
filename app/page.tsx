@@ -67,7 +67,7 @@ export default function Home() {
       {!isLoading && !isError && skips && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
           {skips.map((skip) => (
-            <div key={skip.size} className="bg-gray-900 p-4 rounded-xl shadow-lg">
+            <div key={skip.size} className="bg-gray-900 p-4 rounded-xl shadow-lg border border-gray-900 hover:border hover:border-[#0037C1]">
               <div className="relative w-full h-40">
                 <Image
                   src={skip.size === 4 ? `/4-yard.jpg` : skip.size === 6 ? `/6-yard.jpg` : skip.size === 8 ? `/8-yard.jpg` : skip.size === 10 ? `/10-yard.jpg` : skip.size === 12 ? `/12-yard.jpg` : `/6-yard.jpg`}
