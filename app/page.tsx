@@ -32,30 +32,32 @@ export default function Home() {
 
 
   return (
-    <div className="bg-black text-white min-h-screen p-4 md:p-6">
+    <div className="bg-black text-white min-h-screen ">
 
-      <div className="max-w-6xl mx-auto flex items-center space-x-4 mb-8 overflow-x-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
-        {steps.map((step, index) => (
-          <React.Fragment key={step.name}>
-            <button
-              className={`flex items-center whitespace-nowrap transition-colors ${step.active
-                ? "text-[#0037C1] hover:text-[#0037C1] cursor-pointer"
-                : "text-white/60 cursor-not-allowed opacity-50"
-                }`}
-              disabled={!step.active}
-            >
-              <step.icon className="w-6 h-6" />
-              <span className="ml-2 text-white">{step.name}</span>
-            </button>
-            {index < steps.length - 1 && <div className="w-16 h-px bg-[#2A2A2A]"></div>}
-          </React.Fragment>
-        ))}
+      <div className="bg-[#0037C1] py-2">
+        <div className="max-w-7xl mx-auto flex items-center lg:justify-center px-4 lg:px-0 space-x-4 py-4 overflow-x-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+          {steps.map((step, index) => (
+            <React.Fragment key={step.name}>
+              <button
+                className={`flex items-center whitespace-nowrap transition-colors ${step.active
+                  ? "text-white hover:text-white cursor-pointer"
+                  : "text-white cursor-not-allowed opacity-50"
+                  }`}
+                disabled={!step.active}
+              >
+                <step.icon className="w-5 h-5" />
+                <span className="ml-2 text-white font-light text-sm tracking-wider">{step.name}</span>
+              </button>
+              {index < steps.length - 1 && <div className="w-2 h-px bg-white/50"></div>}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
 
 
-      <div className="max-w-6xl px-4 mx-auto my-3 text-center">
-        <h2 className="text-2xl font-bold text-rios-100 text-center mb-4">Choose Your Skip Size</h2>
-        <p className="text-gray-400 text-center mb-8">Select the skip size that best suits your needs</p>
+      <div className="max-w-7xl  mx-auto  p-10 text-center">
+        <h2 className="text-3xl font-bold text-rios-100 text-center mb-2 mt-9">Choose Your Skip Size</h2>
+        <p className="text-gray-400 font-light text-center mb-8">Select the skip size that best suits your needs</p>
       </div>
 
 
@@ -65,10 +67,10 @@ export default function Home() {
       {isError && <p className="text-center text-red-400">Failed to load skips. Please try again.</p>}
 
       {!isLoading && !isError && skips && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-2 lg:px-0 md:gap-6 max-w-7xl mx-auto">
           {skips.map((skip) => (
-            <div key={skip.size} className="bg-gray-900 p-4 rounded-xl shadow-lg border border-gray-900 hover:border hover:border-[#0037C1]">
-              <div className="relative w-full h-40">
+            <div key={skip.size} className="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-900 hover:border hover:border-[#0037C1]">
+              <div className="relative w-full h-60">
                 <Image
                   src={skip.size === 4 ? `/4-yard.jpg` : skip.size === 6 ? `/6-yard.jpg` : skip.size === 8 ? `/8-yard.jpg` : skip.size === 10 ? `/10-yard.jpg` : skip.size === 12 ? `/12-yard.jpg` : `/6-yard.jpg`}
                   alt={`${skip.size} Yard Skip`}
@@ -89,7 +91,10 @@ export default function Home() {
               </p>
               <button className="w-full py-2.5 md:py-3 px-4 rounded-md transition-all flex items-center justify-center space-x-2
            bg-[#2A2A2A] text-white hover:bg-[#3A3A3A] hover:border-[#0037C1]
-           false"><span>Select This Skip</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+           false"><span>Choose this skip
+                </span>
+                {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg> */}
+              </button>
             </div>
           ))}
         </div>
